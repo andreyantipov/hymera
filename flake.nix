@@ -25,6 +25,9 @@
               rustc
               cargo
 
+              # Editor
+              helix
+
               # Common build tools
               pkg-config
               openssl
@@ -32,12 +35,14 @@
               # Maintenance
               just
               bacon
+
+              # Libs
             ];
 
             shellHook = ''
               echo "Hymera development environment"
-              echo "Rust version: $(rustc --version)"
-              echo "Cargo version: $(cargo --version)"
+              echo "$(rustc --version)"
+              echo "$(cargo --version)"
             '';
           };
         }

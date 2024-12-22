@@ -1,0 +1,17 @@
+[workspace.package]
+name = "hymera"
+version = "0.1.0"
+edition = "2021"
+authors = ["Andrey Antipov"]
+license = "MIT"
+
+[workspace]
+resolver = "2"
+members = [
+  "crates/bin/shell"
+]
+
+[workspace.dependencies]
+hyprland = { version ="0.3.13" }
+
+
