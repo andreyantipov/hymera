@@ -1,0 +1,2 @@
+# hymera
+hyprland widgets
