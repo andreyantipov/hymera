@@ -8,10 +8,5 @@ license = "MIT"
 [workspace]
 resolver = "2"
 members = [
-  "crates/bin/shell"
+  "crates/bin/system-panel"
 ]
-
-[workspace.dependencies]
-hyprland = { version ="0.3.13" }
-
-

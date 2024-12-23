@@ -1,0 +1,13 @@
+[package]
+name = "hymera-system-panel"
+edition = "2021"
+version = "0.1.0"
+license = "MIT"
+
+
+[dependencies]
+dioxus = { version = "0.6.1", features = ["launch", "desktop"] }
+tokio = { version = "1.42.0", features = ["full"] }
+tracing = "0.1"
+dioxus-desktop = "0.6.1"
+hyprland = "0.4.0-beta.1"

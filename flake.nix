@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     systems.url = "github:nix-systems/default";
-    # prismaEngines.url = "path:./libs/shared/database/.nix/prisma-engines";
   };
 
   outputs = { systems, nixpkgs, ... }@inputs:
@@ -21,28 +20,49 @@
         {
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
-              # Development tools
-              rustc
-              cargo
+                # Development tools
+                rustc
+                cargo
 
-              # Editor
-              helix
+                # Editor
+                zed-editor
+                helix
 
-              # Common build tools
-              pkg-config
-              openssl
+                # Devtools
+                rust-analyzer
 
-              # Maintenance
-              just
-              bacon
+                # Common build tools & Libs
+                openssl
+                pkg-config
+                atk
+                wayland
+                fontconfig
+                libxkbcommon
+                wayland
+                libglvnd
+                libsoup_3
+                webkitgtk_4_1
+                xdotool
 
-              # Libs
+                # xorg.libX11
+                # xorg.libXcursor
+                # xorg.libXrandr
+                # xorg.libxcb
+                # xorg.libXi
             ];
 
             shellHook = ''
-              echo "Hymera development environment"
-              echo "$(rustc --version)"
-              echo "$(cargo --version)"
+                # envs
+                export "LD_LIBRARY_PATH=${pkgs.wayland}/lib:$LD_LIBRARY_PATH"
+                export "LD_LIBRARY_PATH=${pkgs.libglvnd}/lib:$LD_LIBRARY_PATH"
+                export "LD_LIBRARY_PATH=${pkgs.libxkbcommon}/lib:$LD_LIBRARY_PATH"
+
+                # intro
+                echo "Hymera development environment"
+                echo "$(rustc --version)"
+                echo "$(cargo --version)"
+                echo "$(rust-analyzer --version)"
+
             '';
           };
         }
