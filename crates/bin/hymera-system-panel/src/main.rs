@@ -3,8 +3,6 @@ mod window;
 
 use dioxus::prelude::*;
 use dioxus_desktop::WindowBuilder;
-use hyprland::{data::Monitor, shared::HyprDataActive};
-use hyprland::dispatch::*;
 use ui::Panel;
 
 fn main() {
@@ -18,8 +16,6 @@ fn main() {
 
 fn app() -> Element {
     rsx! {
-        div {
-            Panel {}
-        }
+        div { Panel {} }
     }
 }

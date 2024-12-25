@@ -1,5 +1,4 @@
 use dioxus_desktop::{LogicalSize, WindowBuilder};
-use dioxus::prelude::*;
 use dioxus_desktop::tao::{platform::unix::WindowBuilderExtUnix};
 use hyprland::{data::Monitor, shared::HyprDataActive};
 

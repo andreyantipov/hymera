@@ -1,9 +1,27 @@
+[build]
+rustc-args = ["-Vv"]
+
 [workspace.package]
 name = "hymera"
 version = "0.1.0"
 edition = "2021"
 authors = ["Andrey Antipov"]
 license = "MIT"
+
+[packages]
+dioxus-cli = { version = "0.6.1" }
+
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
 
 [workspace]
 resolver = "2"
