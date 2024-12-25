@@ -1,0 +1,4 @@
+[toolchain]
+channel = "stable"                               # or "beta" / "nightly" depending on your requirements
+components = ["rust-analyzer", "cargo", "rustc"]
+profile = "default"

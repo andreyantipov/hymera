@@ -7,6 +7,4 @@ license = "MIT"
 
 [workspace]
 resolver = "2"
-members = [
-  "crates/bin/system-panel"
-]
+members = ["crates/bin/hymera-system-panel"]

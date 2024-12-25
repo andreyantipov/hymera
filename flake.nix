@@ -21,15 +21,12 @@
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
                 # Development tools
-                rustc
-                cargo
+                rustup
 
                 # Editor
+                jetbrains.rust-rover
                 zed-editor
                 helix
-
-                # Devtools
-                rust-analyzer
 
                 # Common build tools & Libs
                 openssl
@@ -43,15 +40,12 @@
                 libsoup_3
                 webkitgtk_4_1
                 xdotool
-
-                # xorg.libX11
-                # xorg.libXcursor
-                # xorg.libXrandr
-                # xorg.libxcb
-                # xorg.libXi
             ];
 
             shellHook = ''
+                # setup
+                # rustup default stable
+
                 # envs
                 export "LD_LIBRARY_PATH=${pkgs.wayland}/lib:$LD_LIBRARY_PATH"
                 export "LD_LIBRARY_PATH=${pkgs.libglvnd}/lib:$LD_LIBRARY_PATH"
@@ -62,7 +56,6 @@
                 echo "$(rustc --version)"
                 echo "$(cargo --version)"
                 echo "$(rust-analyzer --version)"
-
             '';
           };
         }
